@@ -1,0 +1,1 @@
+{"savesList":[{"list":[{"x":100,"y":200,"size":40,"saveType":"Circle"}],"x":0,"y":0,"size":0,"saveType":"GROUP"}],"activeShapeIndex":0}
