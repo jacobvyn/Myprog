@@ -1,1 +1,1 @@
-{"savesList":[{"list":[{"x":100,"y":200,"size":40,"saveType":"Circle"}],"x":0,"y":0,"size":0,"saveType":"GROUP"}],"activeShapeIndex":0}
+{"savesList":[{"list":[{"x":160,"y":360,"size":40,"saveType":"Rectangle"},{"x":400,"y":320,"size":115,"saveType":"Circle"},{"x":320,"y":400,"size":40,"saveType":"Triangle"},{"x":440,"y":490,"size":40,"saveType":"Triangle"},{"x":320,"y":500,"size":40,"saveType":"Rectangle"}],"x":0,"y":0,"size":0,"saveType":"GROUP"},{"x":200,"y":180,"size":40,"saveType":"Triangle"},{"x":200,"y":280,"size":40,"saveType":"Circle"}],"activeShapeIndex":2}

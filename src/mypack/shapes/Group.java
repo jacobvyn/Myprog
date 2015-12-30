@@ -5,19 +5,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Group extends Shape {
-	ArrayList<Shape> groupList = new ArrayList<Shape>();
+	ArrayList<Shape> groupList;// = new ArrayList<Shape>();
 
 	public Group() {
+		groupList = new ArrayList<Shape>();
 	}
 
 	public Group(ArrayList<Shape> list) {
+		groupList = new ArrayList<Shape>();
 		groupList.addAll(list);
+		
 	}
 
 	public void cleanList() {
 		for (int i = 0; i < groupList.size(); i++) {
-			if (equals(groupList.get(i), groupList.get(i + 1))) {
-				groupList.remove(i + 1);
+			if (equals(groupList.get(i), groupList.get(i+1))) {
+				groupList.remove(i+1);
 			}
 
 		}

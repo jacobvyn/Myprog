@@ -68,7 +68,8 @@ public class MyFirstMain extends Frame implements KeyListener {
 		g1 = g.create();
 		g1.drawString("1- add circle, 2 - rectangle, 3- triangle, DEL -delete", 30, 50);
 		g1.drawString("PgUP/PgDN - next shape, F1/F2 - increase/decrease, arrows- move", 30, 70);
-		g1.drawString("Ctrl+S - save, L - load", 30, 90);
+		g1.drawString("Cntrl - make group, Shift - clone", 30, 90);
+		g1.drawString("Ctrl+S - save, L - load", 30, 110);
 
 		onScreen.drawAll();
 

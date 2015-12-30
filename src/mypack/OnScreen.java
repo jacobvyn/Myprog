@@ -165,7 +165,7 @@ public class OnScreen {
 
 				group.addShape(screenList.get(activeShapeIndex).copy());
 				group.addShape(shape.copy());
-				group.cleanList();
+			//	group.cleanList();
 
 				if (unite) {
 					screenList.remove(screenList.get(activeShapeIndex));
