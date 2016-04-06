@@ -22,6 +22,7 @@ public class OnScreen {
 	}
 
 	public void add(Graphics g, Shape.Type shapeType) {
+		
 		screenList.add(ShapeMaker.crateShape(g, shapeType));
 		activeShapeIndex = screenList.size() - 1;
 
@@ -37,6 +38,7 @@ public class OnScreen {
 	}
 
 	public void dec() {
+		
 		getActiveShape(activeShapeIndex).dec();
 
 	}
@@ -49,6 +51,7 @@ public class OnScreen {
 	}
 
 	public void previouseActiveShape() {
+		
 		activeShapeIndex--;
 		if (activeShapeIndex < 0)
 			activeShapeIndex = screenList.size() - 1;

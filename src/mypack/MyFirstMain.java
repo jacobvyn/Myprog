@@ -33,6 +33,7 @@ public class MyFirstMain extends Frame implements KeyListener {
 		setTitle("My first programm with GUI");
 
 		addMouseListener(new MouseAdapter() {
+			
 			@Override
 			public void mousePressed(MouseEvent me) {
 				if (me.isControlDown()) {
@@ -46,6 +47,7 @@ public class MyFirstMain extends Frame implements KeyListener {
 		});
 		addKeyListener(this);
 		addWindowListener(new WindowAdapter() {
+			
 			@Override
 			public void windowClosing(WindowEvent e) {
 				System.exit(0);
@@ -55,6 +57,7 @@ public class MyFirstMain extends Frame implements KeyListener {
 	}
 
 	public static void main(String[] args) {
+		
 		MyFirstMain m = new MyFirstMain();
 		m.setVisible(true);
 
@@ -65,6 +68,7 @@ public class MyFirstMain extends Frame implements KeyListener {
 	}
 
 	public void paint(Graphics g) {
+		
 		g1 = g.create();
 		g1.drawString("1- add circle, 2 - rectangle, 3- triangle, DEL -delete", 30, 50);
 		g1.drawString("PgUP/PgDN - next shape, F1/F2 - increase/decrease, arrows- move", 30, 70);

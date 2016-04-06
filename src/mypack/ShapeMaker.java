@@ -22,7 +22,9 @@ public class ShapeMaker {
 	}
 
 	public static Shape crateShape(Graphics g, Shape.Type shapeType) {
+		//to switch
 		switch (shapeType) {
+		
 		case Circle:
 			return new Circle(g, 50, 120, Shape.DEFAULT_SIZE);
 
