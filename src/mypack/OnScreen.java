@@ -22,7 +22,7 @@ public class OnScreen {
 	}
 
 	public void add(Graphics g, Shape.Type shapeType) {
-		
+
 		screenList.add(ShapeMaker.crateShape(g, shapeType));
 		activeShapeIndex = screenList.size() - 1;
 
@@ -33,13 +33,14 @@ public class OnScreen {
 	}
 
 	public void inc() {
-		getActiveShape(activeShapeIndex).inc();
+		if (!screenList.isEmpty())
+			getActiveShape(activeShapeIndex).inc();
 
 	}
 
 	public void dec() {
-		
-		getActiveShape(activeShapeIndex).dec();
+		if (!screenList.isEmpty())
+			getActiveShape(activeShapeIndex).dec();
 
 	}
 
@@ -51,7 +52,7 @@ public class OnScreen {
 	}
 
 	public void previouseActiveShape() {
-		
+
 		activeShapeIndex--;
 		if (activeShapeIndex < 0)
 			activeShapeIndex = screenList.size() - 1;
@@ -78,8 +79,10 @@ public class OnScreen {
 	}
 
 	public void move(Shape.Direction direction) {
-		getActiveShape(activeShapeIndex).move(direction);
-		checkCollision();
+		if (!screenList.isEmpty()) {
+			getActiveShape(activeShapeIndex).move(direction);
+			checkCollision();
+		}
 	}
 
 	private void changeColor() {
@@ -168,7 +171,7 @@ public class OnScreen {
 
 				group.addShape(screenList.get(activeShapeIndex).copy());
 				group.addShape(shape.copy());
-			//	group.cleanList();
+				// group.cleanList();
 
 				if (unite) {
 					screenList.remove(screenList.get(activeShapeIndex));

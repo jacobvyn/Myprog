@@ -19,44 +19,51 @@ public class MyFirst extends JPanel {
 
 	private OnScreen onScreen;
 	private Graphics g1;
+	private boolean save;
 
 	public MyFirst() {
 		onScreen = new OnScreen();
-		
+		save = false;
 		Font font = new Font(Font.SANS_SERIF, Font.PLAIN, 16);
 		setFont(font);
 
-//--------------------
+		// --------------------
 	}
 
 	@Override
 	public Dimension getPreferredSize() {
 		return new Dimension(800, 800);
 	}
-	
-
 
 	@Override
 	protected void paintComponent(Graphics g) {
 		super.paintComponent(g);
 
 		g1 = g.create();
+		
 		g1.drawString("1- add circle, 2 - rectangle, 3- triangle, DEL -delete", 30, 50);
 		g1.drawString("PgUP/PgDN - next shape, F1/F2 - increase/decrease, arrows- move", 30, 70);
 		g1.drawString("Cntrl - make group, Shift - clone", 30, 90);
 		g1.drawString("Ctrl+S - save, L - load", 30, 110);
 
+		if (save) {
+			loadScreen();
+			save = false;
+		}
 		onScreen.drawAll();
 
 	}
 
-	public void loadScreen(File f) {
+	public void loadScreen() {
 		try {
-			String jsonString = FileUtils.readFileToString(f, "windows-1251");
+			File file = new File("Save.txt");
+			String jsonString = FileUtils.readFileToString(file, "windows-1251");
 			Gson gson = new GsonBuilder().create();
 
 			Save save = gson.fromJson(jsonString, Save.class);
-			onScreen.loadSave(g1, save);
+			if (!(g1 == null)) {
+				onScreen.loadSave(g1, save);
+			}
 
 		} catch (IOException e) {
 			System.out.println("Can't load.");
@@ -77,7 +84,6 @@ public class MyFirst extends JPanel {
 		}
 	}
 
-	
 	public void repaintAll() {
 		this.repaint();
 	}
@@ -88,6 +94,14 @@ public class MyFirst extends JPanel {
 
 	public OnScreen getOnScreen() {
 		return onScreen;
+	}
+
+	public boolean isSave() {
+		return save;
+	}
+
+	public void setSave(boolean save) {
+		this.save = save;
 	}
 
 }

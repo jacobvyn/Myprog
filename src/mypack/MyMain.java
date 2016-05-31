@@ -2,7 +2,6 @@ package mypack;
 
 import java.io.File;
 
-
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 
@@ -10,28 +9,24 @@ import mypack.listeners.MyKeyAdapter;
 import mypack.listeners.MyMouseListener;
 
 public class MyMain extends JFrame {
-	MyFirst screen;
+	private MyFirst myFirst;
 
+	
 	MyMain() {
 		setTitle("My first programm with GUI");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
 
-		screen = new MyFirst();
-		add(screen);
+		myFirst = new MyFirst();
+		add(myFirst);
 
+		addMouseListener(new MyMouseListener(myFirst.getOnScreen()));
+		addKeyListener(new MyKeyAdapter(myFirst));
 
-		addMouseListener(new MyMouseListener(screen.getOnScreen()));
-		addKeyListener(new MyKeyAdapter(screen));
-		
 		pack();
 		setVisible(true);
 
 	}
 
-	public void load(File f) {
-		screen.loadScreen(f);
-	}
 
 	public static void main(String[] args) {
 		SwingUtilities.invokeLater(new Runnable() {
@@ -39,15 +34,21 @@ public class MyMain extends JFrame {
 			@Override
 			public void run() {
 				MyMain main = new MyMain();
-				/*
+				
 				File file = new File("Save.txt");
 				if (file.exists()){
-					main.load(file);
+					main.getMyFirst().setSave(true);
+					//main.load(file);
 				}
-				*/
+				
 			}
 		});
 
 	}
+
+	public MyFirst getMyFirst() {
+		return myFirst;
+	}
+
 
 }

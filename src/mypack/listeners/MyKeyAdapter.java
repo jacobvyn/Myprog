@@ -2,7 +2,6 @@ package mypack.listeners;
 
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.io.File;
 
 import mypack.MyFirst;
 import mypack.shapes.Shape;
@@ -76,7 +75,8 @@ public class MyKeyAdapter extends KeyAdapter {
 			break;
 
 		case KeyEvent.VK_L:
-			myFirst.loadScreen(new File("Save.txt"));
+			myFirst.setSave(true);
+			//myFirst.loadScreen();
 			break;
 		}
 
