@@ -48,30 +48,7 @@ public class SaveShape {
 
 		return result;
 	}
-/*
-	public static Shape createShape(Graphics g, SaveShape saveShape) {
 
-		Shape resultShape=null;
-		Shape.Type type =saveShape.getSaveType();
-		
-		if (type == Shape.Type.Circle || type == Shape.Type.Rectangle || type == Shape.Type.Triangle){
-		resultShape= ShapeMaker.crateShape(g, saveShape.getSaveType(), saveShape.getX(), saveShape.getY(),saveShape.getSize());
-		}
-		
-		if (saveShape.getSaveType() == Shape.Type.GROUP) {
-			resultShape= ShapeMaker.crateShape(g, saveShape.getSaveType(), saveShape.getX(), saveShape.getY(),saveShape.getSize());
-			Group group = (Group) resultShape;
-			List<Shape> groupList = new ArrayList<Shape>();
-			for (SaveShape groupSavesMember : saveShape.getList()) {
-				Shape groupsMember = createShape(g, groupSavesMember);
-				groupList.add(groupsMember);
-			}
-			group.setList(groupList);
-		}
-
-		return resultShape;
-	}
-	*/
 	public static Shape createShape(Graphics g, SaveShape saveShape) {
 
 		Shape resultShape= ShapeMaker.crateShape(g, saveShape.getSaveType(), saveShape.getX(), saveShape.getY(),saveShape.getSize());
