@@ -61,7 +61,7 @@ public class MyFirst extends JPanel {
 			Gson gson = new GsonBuilder().create();
 
 			Save save = gson.fromJson(jsonString, Save.class);
-			if (!(g1 == null)) {
+			if (g1 != null) {
 				onScreen.loadSave(g1, save);
 			}
 
